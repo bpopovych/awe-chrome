@@ -30,7 +30,7 @@ RDEPEND="
 	media-libs/fontconfig
 	media-libs/freetype
 	media-libs/jpeg:62
-	>=sys-devel/gcc-4.2[-nocxx]
+	>=sys-devel/gcc-4.2
 	x11-libs/cairo
 	x11-libs/gtk+:2
 	x11-libs/pango

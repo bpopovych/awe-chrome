@@ -65,6 +65,8 @@ src_unpack() {
 				mv "${WORKDIR}"/data.tar.lzma "${WORKDIR}"/${i%%_*}.tar.lzma
 			elif [[ -e "${WORKDIR}"/data.tar.gz ]]; then
 				mv "${WORKDIR}"/data.tar.gz "${WORKDIR}"/${i%%_*}.tar.gz
+			elif [[ -e "${WORKDIR}"/data.tar.xz ]]; then
+				mv "${WORKDIR}"/data.tar.xz "${WORKDIR}"/${i%%_*}.tar.xz
 			else
 				die "Can't find data from ${i}"
 			fi

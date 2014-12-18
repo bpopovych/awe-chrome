@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI="2"
 
 inherit eutils toolchain-funcs versionator
 
@@ -78,7 +78,7 @@ src_install() {
 	declare CHROME_HOME="/opt/google/chrome"
 
 	cd "${D}"
-	lzma -cd "${WORKDIR}"/${MY_PN}.tar.lzma | tar xvf - || die "Couldn't extract"
+	xz -cd "${WORKDIR}"/${MY_PN}.tar.lzma | tar xvf - || die "Couldn't extract"
 	rm -r "${D}"/{etc,usr/bin/google-chrome}
 
 	sed -i "s|Exec=${CHROME_HOME//\//\\/}\/|Exec=|g" "${D}"${CHROME_HOME}/${PN%-bin}.desktop

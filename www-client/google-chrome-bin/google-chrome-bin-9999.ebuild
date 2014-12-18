@@ -78,7 +78,7 @@ src_install() {
 	declare CHROME_HOME="/opt/google/chrome"
 
 	cd "${D}"
-	xz -cd "${WORKDIR}"/${MY_PN}.tar.lzma | tar xvf - || die "Couldn't extract"
+	xz -cd "${WORKDIR}"/${MY_PN}.tar.xz | tar xvf - || die "Couldn't extract"
 	rm -r "${D}"/{etc,usr/bin/google-chrome}
 
 	sed -i "s|Exec=${CHROME_HOME//\//\\/}\/|Exec=|g" "${D}"${CHROME_HOME}/${PN%-bin}.desktop
